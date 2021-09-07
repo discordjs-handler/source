@@ -2,7 +2,7 @@
   "meta": {
     "generator": "0.11.1",
     "format": 22,
-    "date": 1631014216013
+    "date": 1631016575925
   },
   "custom": {
     "general": {
@@ -66,7 +66,7 @@
             ]
           ],
           "meta": {
-            "line": 35,
+            "line": 34,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -82,7 +82,7 @@
             ]
           ],
           "meta": {
-            "line": 41,
+            "line": 40,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -107,7 +107,7 @@
             ]
           ],
           "meta": {
-            "line": 47,
+            "line": 46,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -132,7 +132,7 @@
             ]
           ],
           "meta": {
-            "line": 53,
+            "line": 52,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -157,7 +157,7 @@
             ]
           ],
           "meta": {
-            "line": 59,
+            "line": 58,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -180,7 +180,7 @@
             ]
           ],
           "meta": {
-            "line": 79,
+            "line": 81,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -201,7 +201,7 @@
             ]
           ],
           "meta": {
-            "line": 100,
+            "line": 105,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -222,7 +222,7 @@
             ]
           ],
           "meta": {
-            "line": 121,
+            "line": 129,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -248,7 +248,7 @@
             ]
           ],
           "meta": {
-            "line": 144,
+            "line": 156,
             "file": "Handler.ts",
             "path": "src/classes"
           }
@@ -262,6 +262,331 @@
     }
   ],
   "interfaces": [],
-  "typedefs": [],
+  "typedefs": [
+    {
+      "name": "Options",
+      "description": "Module Options",
+      "type": [
+        [
+          [
+            "Object"
+          ]
+        ]
+      ],
+      "props": [
+        {
+          "name": "commandsDir",
+          "description": "Path to Commands Folder",
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "slashCommandsDir",
+          "description": "Path to Slash Commands Folder",
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "eventsDir",
+          "description": "Path to Events Folder",
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "searchPattern",
+          "description": "Pattern for Files (look at the examples)",
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        }
+      ],
+      "meta": {
+        "line": 1,
+        "file": "TypeDefs.ts",
+        "path": "src/interfaces"
+      }
+    },
+    {
+      "name": "Command",
+      "description": "Command",
+      "type": [
+        [
+          [
+            "Object"
+          ]
+        ]
+      ],
+      "props": [
+        {
+          "name": "name",
+          "description": "Command Name",
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "description",
+          "description": "Command Description",
+          "optional": true,
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "aliases",
+          "description": "Command Aliases",
+          "optional": true,
+          "type": [
+            [
+              [
+                "Array",
+                "<"
+              ],
+              [
+                "string",
+                ">"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "usage",
+          "description": "Command Usage",
+          "optional": true,
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "ownerOnly",
+          "description": "Command for Owners Only",
+          "optional": true,
+          "type": [
+            [
+              [
+                "boolean"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "userPerms",
+          "description": "Required Permissions for User",
+          "optional": true,
+          "type": [
+            [
+              [
+                "Permissions"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "userPerms",
+          "description": "Required Permissions for Bot",
+          "optional": true,
+          "type": [
+            [
+              [
+                "Permissions"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "run",
+          "description": "Command Run Function",
+          "optional": true,
+          "type": [
+            [
+              [
+                "function"
+              ]
+            ]
+          ]
+        }
+      ],
+      "meta": {
+        "line": 11,
+        "file": "TypeDefs.ts",
+        "path": "src/interfaces"
+      }
+    },
+    {
+      "name": "SlashCommand",
+      "description": "Slash Command",
+      "type": [
+        [
+          [
+            "Object"
+          ]
+        ]
+      ],
+      "props": [
+        {
+          "name": "name",
+          "description": "Slash Command Name",
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "description",
+          "description": "Slash Command Description",
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "type",
+          "description": "Slash Command Type",
+          "optional": true,
+          "type": [
+            [
+              [
+                "ApplicationCommandType"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "options",
+          "description": "Slash Command Options",
+          "optional": true,
+          "type": [
+            [
+              [
+                "Array",
+                "<"
+              ],
+              [
+                "ApplicationCommandOption",
+                ">"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "options",
+          "description": "Slash Command Default Permission",
+          "optional": true,
+          "type": [
+            [
+              [
+                "boolean"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "run",
+          "description": "Slash Command Run Function",
+          "type": [
+            [
+              [
+                "function"
+              ]
+            ]
+          ]
+        }
+      ],
+      "meta": {
+        "line": 25,
+        "file": "TypeDefs.ts",
+        "path": "src/interfaces"
+      }
+    },
+    {
+      "name": "Event",
+      "description": "Event",
+      "type": [
+        [
+          [
+            "Object"
+          ]
+        ]
+      ],
+      "props": [
+        {
+          "name": "name",
+          "description": "Event Name",
+          "type": [
+            [
+              [
+                "string"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "run",
+          "description": "Event Run Function",
+          "type": [
+            [
+              [
+                "function"
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "emitter",
+          "description": "Event Emitter",
+          "optional": true,
+          "type": [
+            [
+              [
+                "EventEmitter"
+              ]
+            ]
+          ]
+        }
+      ],
+      "meta": {
+        "line": 37,
+        "file": "TypeDefs.ts",
+        "path": "src/interfaces"
+      }
+    }
+  ],
   "externals": []
 }
