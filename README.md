@@ -8,10 +8,7 @@
 ## Installation
 <strong>Please note: NodeJS v16.6 or above required for this module!</strong>
 
-<code>
-$ npm i @badboy-discord/discordjs-handler <br />
-$ yarn add @badboy-discord/discordjs-handler
-</code>
+<code>$ npm i @badboy-discord/discordjs-handler</code>
 
 ## Features
 <strong>[🙂] Easy to use.</strong> <br />
@@ -21,7 +18,7 @@ $ yarn add @badboy-discord/discordjs-handler
 
 ## Initialization
 <strong>To initializate module, you need to write this code in bot main file.</strong> <br>
-<strong>Or you can view our [examples folder](https://github.com/bad-boy-discord/discordjs-handler/tree/stable/examples).</strong> <br>
+<strong>Or you can view our [examples folder](https://github.com/discordjs-handler/source/tree/stable/examples).</strong> <br>
 ```js 
 const { Client } = require('discord.js');
 const { Handler } = require('discordjs-handler');
@@ -40,7 +37,7 @@ const handler = new Handler({
 
 ## Links
 <b>Authors: [badboy-discord](https://www.npmjs.com/~badboy-discord), [xyligan-gp](https://www.npmjs.com/~xyligan-gp)<br>
-<b>Discord Tags: [goose#1046](https://discord.com/545956523571150858), [♡ xүℓ[ι]gαη4εg ♡#9457](https://discord.com/533347075463577640)<br>
+<b>Discord Tags: [goose#1046](https://discord.com/users/545956523571150858), [♡ xүℓ[ι]gαη4εg ♡#9457](https://discord.com/users/533347075463577640)<br>
 <b>NodeJS: [Click](https://www.nodejs.org/)<br>
 <b>TypeScript: [Click](https://www.typescriptlang.org)<br>
 <b>Support Server: [Click](https://discord.gg/eGZfaWsZgR)<br>
