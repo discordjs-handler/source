@@ -1,0 +1,11 @@
+.github
+node_modules
+docs
+dist
+tests
+examples
+package-lock.json
+.jsconfig.json
+.babelrc.json
+.commitlintrc.json
+.lintstagedrc.json
