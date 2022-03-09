@@ -7,7 +7,7 @@
   "scripts": {
     "lint:fix": "prettier --write src",
     "postinstall": "tsc -p tsconfig.json",
-    "docs": "docgen -s src/*.ts src/**/*.ts -o docs/stable.json -c docs/index.yml -g -S 1 -j .jsconfig.json"
+    "docs": "docgen -s src/*.ts src/**/*.ts -o docs/stable.json -c pages/index.yml -g -S 1 -j .jsconfig.json"
   },
   "repository": {
     "type": "git",
