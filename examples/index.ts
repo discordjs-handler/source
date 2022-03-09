@@ -11,4 +11,4 @@ const handler = new Handler(client, {
   searchPattern: "/**/*.ts",
 });
 
-client.login("ODg5ODMwODE5ODYwOTc5NzEy.YUm9hw.rhiKSq4IatlJpfnGW3uMa6XfwSA");
+client.login("super-duper-token");
