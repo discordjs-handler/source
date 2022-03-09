@@ -1,22 +1,26 @@
 import { Client, Collection } from "discord.js";
 import { Options } from "./Options";
-import { Command, SlashCommand } from "./Structures";
+import { Command } from "./Command";
+import { SlashCommand } from "./SlashCommand";
+import { Event } from "./Event";
 
-export = Handler;
+export declare interface Handler {
+  client: Client;
+  options: Options;
 
-declare class Handler {
-    public client: Client;
-    public options: Options;
+  commands: Collection<string, Command>;
+  slashCommands: Collection<string, SlashCommand>;
+  events: Collection<string, Event>;
+}
 
-    public commands: Collection<string, Command>;
-    public slashCommands: Collection<string, SlashCommand>;
-    public events: Collection<string, Event>;
+export declare class Handler {
+  constructor(client: Client, options: Options);
 
-    constructor(client: Client, options: Options);
+  private init(): Promise<boolean>;
 
-    public loadCommands(): Promise<boolean>;
-    public loadSlashCommands(): Promise<boolean>;
-    public loadEvents(): Promise<boolean>;
+  public loadCommands(): Promise<boolean>;
+  public loadSlashCommands(): Promise<boolean>;
+  public loadEvents(): Promise<boolean>;
 
-    private registerSlashCommands(): Promise<boolean | string>;
+  private registerSlashCommands(): Promise<boolean | string>;
 }

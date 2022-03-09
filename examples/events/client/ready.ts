@@ -1,7 +1,15 @@
-import { EventRun } from '../../../src';
+import { Client } from "discord.js";
+import { Handler } from "../../../src";
+import { Event } from "../../../src/classes/Event";
 
-export const name: string = 'ready';
+export default class ReadyEvent extends Event {
+  constructor() {
+    super({
+      name: "ready",
+    });
+  }
 
-export const run: EventRun = async (client) => {
-    console.log(`${client.user.tag} started!`);
+  run(client: Client, handler: Handler) {
+    console.log('Bot "%s" started!', client.user.tag);
+  }
 }

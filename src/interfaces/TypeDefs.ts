@@ -11,34 +11,40 @@
 /**
  * Command
  *
- * @typedef {Object} Command
+ * @typedef {Object} CommandStruct
  * @prop {string} name Command Name
  * @prop {string} [description] Command Description
  * @prop {string[]} [aliases] Command Aliases
  * @prop {string} [usage] Command Usage
  * @prop {boolean} [ownerOnly] Command for Owners Only
- * @prop {Permissions} [userPerms] Required Permissions for User
- * @prop {Permissions} [userPerms] Required Permissions for Bot
- * @prop {Function} [run] Command Run Function
+ * @prop {PermissionString} [userPerms] Required Permissions for User
+ * @prop {PermissionString} [botPerms] Required Permissions for Bot
  */
 
 /**
  * Slash Command
  *
- * @typedef {Object} SlashCommand
+ * @typedef {Object} SlashCommandStruct
  * @prop {string} name Slash Command Name
  * @prop {string} description Slash Command Description
  * @prop {ApplicationCommandType} [type] Slash Command Type
- * @prop {ApplicationCommandOption[]} [options] Slash Command Options
+ * @prop {ApplicationCommandOptionData[]} [options] Slash Command Options
  * @prop {boolean} [options] Slash Command Default Permission
- * @prop {Function} run Slash Command Run Function
  */
 
 /**
  * Event
  *
- * @typedef {Object} Event
+ * @typedef {Object} EventStruct
  * @prop {string} name Event Name
- * @prop {Function} run Event Run Function
- * @prop {EventEmitter} [emitter] Event Emitter
+ * @prop {string} [emitter] Event Emitter
+ */
+
+/**
+ * Shash Command Types
+ *
+ * * CHAT_INPUT
+ * * USER
+ * * MESSAGE
+ * @typedef {"CHAT_INPUT" | "USER" | "MESSAGE"} SlashCommandTypes
  */

@@ -1,10 +1,17 @@
-import { SlashRun } from '../../src/interfaces/SlashCommand';
+import { Client, CommandInteraction } from "discord.js";
+import { SlashCommand } from "../../src/classes/SlashCommand";
 
-export const name: string = 'test';
-export const description: string = 'Test Command';
-
-export const run: SlashRun = async(client, interaction) => {
-    return interaction.reply({
-        content: '**test** slash command runned!'
+export default class TestSlashCommand extends SlashCommand {
+  constructor() {
+    super({
+      name: "test",
+      description: "This is test command!",
     });
+  }
+
+  run(client: Client, interaction: CommandInteraction) {
+    return interaction.reply({
+      content: '**Slash Command "test" is working!**',
+    });
+  }
 }

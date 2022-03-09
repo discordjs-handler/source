@@ -1,22 +1,14 @@
 import {
-    ApplicationCommandOption,
-    ApplicationCommandType,
-    Client,
-    CommandInteraction,
-} from 'discord.js'
+  ApplicationCommandOptionData,
+  ApplicationCommandType,
+} from "discord.js";
 
-export interface SlashCommand {
-    name: string
-    description: string
-    type?: ApplicationCommandType
-    options?: ApplicationCommandOption[]
-    defaultPermission?: boolean
-
-    run?: SlashRun
+export interface SlashCommandStruct {
+  name: string;
+  description: string;
+  type?: ApplicationCommandType;
+  options?: ApplicationCommandOptionData[];
+  defaultPermission?: boolean;
 }
 
-export interface SlashRun {
-    (client: Client, interaction: CommandInteraction):
-        | Promise<unknown>
-        | unknown
-}
+export type SlashCommandTypes = ApplicationCommandType;

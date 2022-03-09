@@ -1,11 +1,9 @@
 .github
+.vscode
+.jsconfig.json
+.babelrc.json
 node_modules
 docs
 dist
 tests
 examples
-package-lock.json
-.jsconfig.json
-.babelrc.json
-.commitlintrc.json
-.lintstagedrc.json
