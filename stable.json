@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1646849982578
+  "date": 1646850229678
  },
  "custom": {
   "general": {
@@ -17,7 +17,7 @@
     "changelog": {
      "name": "Changelog",
      "type": "md",
-     "content": "# Module Changelog\n\n- **Version 1.0.0**\n  - Release module\n- **Version 1.0.1**\n  - Code Fixes\n  - [New Website](https://discordjs-handler.js.org/)\n  - Added more JSDoc\n- **Version 1.1.0 - Global Update**\n  - Full Rewrite\n",
+     "content": "# Module Changelog\n\n- **Version 1.0.0**\n  - Release module\n- **Version 1.0.1**\n  - Code Fixes\n  - [New Website](https://discordjs-handler.js.org/)\n  - Added more JSDoc\n- **Version 1.1.0 - Global Update**\n  - Full Rewrite\n- **Version 1.1.1 - Global Update**\n  - Code Fixes\n",
      "path": "pages/general/changelog.md"
     }
    }
@@ -144,7 +144,6 @@
     {
      "name": "run",
      "description": "Run Method",
-     "abstract": true,
      "params": [
       {
        "name": "client",
