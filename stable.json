@@ -1,592 +1,1076 @@
 {
-  "meta": {
-    "generator": "0.11.1",
-    "format": 22,
-    "date": 1631026769727
-  },
-  "custom": {
-    "general": {
-      "name": "General",
-      "files": {
-        "README": {
-          "name": "Welcome",
-          "type": "md",
-          "content": "<img src=\"https://raw.githubusercontent.com/bad-boy-discord/discordjs-handler/stable/assets/discordjs-handler.png\">\r\n<hr>\r\n\r\n## Welcome\r\n<strong>Welcome! This is \"discordjs-handler\" module!</strong> <br>\r\n<strong>This is module that will simplify creating Command and Event Handlers for you Discord Bot!</strong>\r\n\r\n## Installation\r\n<strong>Please note: NodeJS v16.6 or above required for this module!</strong>\r\n\r\n<code>$ npm i @badboy-discord/discordjs-handler</code>\r\n\r\n## Features\r\n<strong>[🙂] Easy to use.</strong> <br />\r\n<strong>[👍] Beginner friendly.</strong> <br />\r\n<strong>[🔑] TypeScript Support.</strong> <br />\r\n<strong>[⚙️] 100% Promise-based</strong>\r\n\r\n## Initialization\r\n<strong>To initializate module, you need to write this code in bot main file.</strong> <br>\r\n<strong>Or you can view our [examples folder](https://github.com/discordjs-handler/source/tree/stable/examples).</strong> <br>\r\n```js \r\nconst { Client } = require('discord.js');\r\nconst { Handler } = require('discordjs-handler');\r\n\r\nconst client = new Client({\r\n    intents: ['GUILDS', 'GUILD_MESSAGES']\r\n});\r\nconst handler = new Handler({\r\n    commandsDir: `${__dirname}/commands`,\r\n    slashCommandsDir: `${__dirname}/slashCommands`,\r\n    eventsDir: `${__dirname}/events`,\r\n\r\n    searchPattern: '**/*{.js,.ts}'\r\n});\r\n```\r\n\r\n## Links\r\n<b>Authors: [badboy-discord](https://www.npmjs.com/~badboy-discord), [xyligan-gp](https://www.npmjs.com/~xyligan-gp)<br>\r\n<b>Discord Tags: [goose#1046](https://discord.com/users/545956523571150858), [♡ xүℓ[ι]gαη4εg ♡#9457](https://discord.com/users/533347075463577640)<br>\r\n<b>NodeJS: [Click](https://www.nodejs.org/)<br>\r\n<b>TypeScript: [Click](https://www.typescriptlang.org)<br>\r\n<b>Support Server: [Click](https://discord.gg/eGZfaWsZgR)<br>\r\n<b>Website: [Click](https://discordjs-handler.js.org/)</b>\r\n",
-          "path": "README.md"
-        },
-        "changelog": {
-          "name": "Changelog",
-          "type": "md",
-          "content": "# Module Changelog\r\n* **Version 1.0.0**\r\n  * Release module\r\n* **Version 1.0.1**\r\n  * Code Fixes\r\n  * [New Website](https://discordjs-handler.js.org/)\r\n  * Added more JSDoc",
-          "path": "docs/general/changelog.md"
-        }
-      }
+ "meta": {
+  "generator": "0.11.1",
+  "format": 22,
+  "date": 1646849982578
+ },
+ "custom": {
+  "general": {
+   "name": "General",
+   "files": {
+    "welcome": {
+     "name": "Welcome",
+     "type": "md",
+     "content": "## Welcome\n\n<strong>Welcome! This is \"@badboy-discord/discordjs-handler\" module!</strong> <br>\n<strong>This is module that will simplify creating Command and Event Handlers for you Discord Bot!</strong>\n\n## Installation\n\n<strong>Please note: NodeJS v16.6 or above required for this module!</strong>\n\n<code>$ npm i @badboy-discord/discordjs-handler</code>\n\n## Features\n\n<strong>[🙂] Easy to use.</strong> <br />\n<strong>[👍] Beginner friendly.</strong> <br />\n<strong>[🔑] TypeScript Support.</strong> <br />\n<strong>[⚙️] 100% Promise-based</strong>\n\n## Initialization\n\n<strong>To initializate module, you need to write this code in bot main file.</strong> <br>\n<strong>Or you can view our [examples folder](https://github.com/discordjs-handler/source/tree/stable/examples).</strong> <br>\n\n```js\nconst { Client } = require(\"discord.js\");\nconst { Handler } = require(\"@badboy-discord/discordjs-handler\");\n\nconst client = new Client({\n  intents: [\"GUILDS\", \"GUILD_MESSAGES\"],\n});\nconst handler = new Handler({\n  commandsDir: `${__dirname}/commands`,\n  slashCommandsDir: `${__dirname}/slashCommands`,\n  eventsDir: `${__dirname}/events`,\n\n  searchPattern: \"**/*{.js,.ts}\",\n});\n```\n\n## Links\n\n<b>Authors: [badboy-discord](https://www.npmjs.com/~badboy-discord), [xyligan-gp](https://www.npmjs.com/~xyligan-gp)<br>\n<b>Discord Tags: [WhyMe#1126](https://discord.com/users/852921856800718908), [♡ xүℓ[ι]gαη4εg ♡#9457](https://discord.com/users/533347075463577640)<br>\n<b>NodeJS: [Click](https://www.nodejs.org/)<br>\n<b>TypeScript: [Click](https://www.typescriptlang.org)<br>\n<b>Support Server: [Click](https://discord.gg/zsTgXs24k2)<br>\n<b>Website: [Click](https://discordjs-handler.js.org/)</b>\n",
+     "path": "pages/general/welcome.md"
+    },
+    "changelog": {
+     "name": "Changelog",
+     "type": "md",
+     "content": "# Module Changelog\n\n- **Version 1.0.0**\n  - Release module\n- **Version 1.0.1**\n  - Code Fixes\n  - [New Website](https://discordjs-handler.js.org/)\n  - Added more JSDoc\n- **Version 1.1.0 - Global Update**\n  - Full Rewrite\n",
+     "path": "pages/general/changelog.md"
     }
-  },
-  "classes": [
+   }
+  }
+ },
+ "classes": [
+  {
+   "name": "Command",
+   "description": "Command Class",
+   "props": [
     {
-      "name": "Handler",
-      "description": "Main Class that including all Handling Functional",
-      "construct": {
-        "name": "Handler",
-        "params": [
-          {
-            "name": "client",
-            "description": "Discord Client",
-            "type": [
-              [
-                [
-                  "Client"
-                ]
-              ]
-            ]
-          },
-          {
-            "name": "options",
-            "description": "Module Options",
-            "type": [
-              [
-                [
-                  "Options"
-                ]
-              ]
-            ]
-          }
+     "name": "name",
+     "description": "Command Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 20,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "description",
+     "description": "Command Description",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 26,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "aliases",
+     "description": "Command Aliases",
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "string",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 32,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "ownerOnly",
+     "description": "For Owner or not",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 40,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "userPerms",
+     "description": "Required User Permissions",
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "PermissionString",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 48,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "botPerms",
+     "description": "Required Bot Permissions",
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "PermissionString",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 56,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "run",
+     "description": "Run Method",
+     "abstract": true,
+     "params": [
+      {
+       "name": "client",
+       "description": "Discord Client",
+       "type": [
+        [
+         [
+          "Client"
+         ]
         ]
+       ]
       },
-      "props": [
-        {
-          "name": "client",
-          "description": "Discord.JS Client",
-          "type": [
-            [
-              [
-                "Client"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 34,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        },
-        {
-          "name": "options",
-          "description": "Module Options",
-          "type": [
-            [
-              [
-                "Options"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 40,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        },
-        {
-          "name": "commands",
-          "description": "Commands Collection",
-          "type": [
-            [
-              [
-                "Collection",
-                "<"
-              ],
-              [
-                "string",
-                ", "
-              ],
-              [
-                "Command",
-                ">"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 46,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        },
-        {
-          "name": "slashCommands",
-          "description": "Slash Commands Collection",
-          "type": [
-            [
-              [
-                "Collection",
-                "<"
-              ],
-              [
-                "string",
-                ", "
-              ],
-              [
-                "SlashCommand",
-                ">"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 52,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        },
-        {
-          "name": "events",
-          "description": "Events Collection",
-          "type": [
-            [
-              [
-                "Collection",
-                "<"
-              ],
-              [
-                "string",
-                ", "
-              ],
-              [
-                "Event",
-                ">"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 58,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        }
-      ],
-      "methods": [
-        {
-          "name": "loadCommands",
-          "description": "Method that loads all the availible Commands",
-          "returns": [
-            [
-              [
-                "Promise",
-                "<"
-              ],
-              [
-                "boolean",
-                ">"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 81,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        },
-        {
-          "name": "loadSlashCommands",
-          "description": "Method that loads all the availible Slash Commands",
-          "returns": [
-            [
-              [
-                "Promise",
-                "<"
-              ],
-              [
-                "boolean",
-                ">"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 105,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        },
-        {
-          "name": "loadEvents",
-          "description": "Method that loads all the availible Events",
-          "returns": [
-            [
-              [
-                "Promise",
-                "<"
-              ],
-              [
-                "boolean",
-                ">"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 129,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        },
-        {
-          "name": "registerSlashCommands",
-          "description": "Method that Registering Slash Commands to All the Guilds",
-          "access": "private",
-          "returns": [
-            [
-              [
-                "Promise",
-                "<"
-              ],
-              [
-                "boolean",
-                "|"
-              ],
-              [
-                "string",
-                ">"
-              ]
-            ]
-          ],
-          "meta": {
-            "line": 156,
-            "file": "Handler.ts",
-            "path": "src/classes"
-          }
-        }
-      ],
-      "meta": {
-        "line": 21,
-        "file": "Handler.ts",
-        "path": "src/classes"
+      {
+       "name": "message",
+       "description": "Discord Message",
+       "type": [
+        [
+         [
+          "Message"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "args",
+       "description": "Arguments",
+       "type": [
+        [
+         [
+          "Array",
+          "<"
+         ],
+         [
+          "string",
+          ">"
+         ]
+        ]
+       ]
       }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "unknown",
+        ">"
+       ]
+      ],
+      [
+       [
+        "unknown"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 65,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
     }
-  ],
-  "interfaces": [],
-  "typedefs": [
+   ],
+   "meta": {
+    "line": 4,
+    "file": "Command.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "Event",
+   "description": "Event Class",
+   "props": [
     {
-      "name": "Options",
+     "name": "name",
+     "description": "Event Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 16,
+      "file": "Event.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "emitter",
+     "description": "Event Emitter",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 22,
+      "file": "Event.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "run",
+     "description": "Run Method",
+     "params": [
+      {
+       "name": "client",
+       "description": "Discord Client",
+       "type": [
+        [
+         [
+          "Client"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "handler",
+       "description": "Handler",
+       "type": [
+        [
+         [
+          "Handler"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "params",
+       "description": "Parameters",
+       "variable": true,
+       "type": [
+        [
+         [
+          "Array",
+          "<"
+         ],
+         [
+          "any",
+          ">"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "unknown",
+        ">"
+       ]
+      ],
+      [
+       [
+        "unknown"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 29,
+      "file": "Event.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 5,
+    "file": "Event.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "Handler",
+   "description": "Main Class that including all Handling Functional",
+   "construct": {
+    "name": "Handler",
+    "params": [
+     {
+      "name": "client",
+      "description": "Discord Client",
+      "type": [
+       [
+        [
+         "Client"
+        ]
+       ]
+      ]
+     },
+     {
+      "name": "options",
       "description": "Module Options",
       "type": [
+       [
         [
-          [
-            "Object"
-          ]
+         "Options"
         ]
-      ],
-      "props": [
-        {
-          "name": "commandsDir",
-          "description": "Path to Commands Folder",
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "slashCommandsDir",
-          "description": "Path to Slash Commands Folder",
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "eventsDir",
-          "description": "Path to Events Folder",
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "searchPattern",
-          "description": "Pattern for Files (look at the examples)",
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        }
-      ],
-      "meta": {
-        "line": 1,
-        "file": "TypeDefs.ts",
-        "path": "src/interfaces"
-      }
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "client",
+     "description": "Discord.JS Client",
+     "type": [
+      [
+       [
+        "Client"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 34,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
     },
     {
-      "name": "Command",
-      "description": "Command",
-      "type": [
-        [
-          [
-            "Object"
-          ]
-        ]
-      ],
-      "props": [
-        {
-          "name": "name",
-          "description": "Command Name",
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "description",
-          "description": "Command Description",
-          "optional": true,
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "aliases",
-          "description": "Command Aliases",
-          "optional": true,
-          "type": [
-            [
-              [
-                "Array",
-                "<"
-              ],
-              [
-                "string",
-                ">"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "usage",
-          "description": "Command Usage",
-          "optional": true,
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "ownerOnly",
-          "description": "Command for Owners Only",
-          "optional": true,
-          "type": [
-            [
-              [
-                "boolean"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "userPerms",
-          "description": "Required Permissions for User",
-          "optional": true,
-          "type": [
-            [
-              [
-                "Permissions"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "userPerms",
-          "description": "Required Permissions for Bot",
-          "optional": true,
-          "type": [
-            [
-              [
-                "Permissions"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "run",
-          "description": "Command Run Function",
-          "optional": true,
-          "type": [
-            [
-              [
-                "function"
-              ]
-            ]
-          ]
-        }
-      ],
-      "meta": {
-        "line": 11,
-        "file": "TypeDefs.ts",
-        "path": "src/interfaces"
-      }
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 40,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
     },
     {
-      "name": "SlashCommand",
-      "description": "Slash Command",
-      "type": [
-        [
-          [
-            "Object"
-          ]
-        ]
-      ],
-      "props": [
-        {
-          "name": "name",
-          "description": "Slash Command Name",
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "description",
-          "description": "Slash Command Description",
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "type",
-          "description": "Slash Command Type",
-          "optional": true,
-          "type": [
-            [
-              [
-                "ApplicationCommandType"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "options",
-          "description": "Slash Command Options",
-          "optional": true,
-          "type": [
-            [
-              [
-                "Array",
-                "<"
-              ],
-              [
-                "ApplicationCommandOption",
-                ">"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "options",
-          "description": "Slash Command Default Permission",
-          "optional": true,
-          "type": [
-            [
-              [
-                "boolean"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "run",
-          "description": "Slash Command Run Function",
-          "type": [
-            [
-              [
-                "function"
-              ]
-            ]
-          ]
-        }
-      ],
-      "meta": {
-        "line": 25,
-        "file": "TypeDefs.ts",
-        "path": "src/interfaces"
-      }
+     "name": "commands",
+     "description": "Commands Collection",
+     "type": [
+      [
+       [
+        "Collection",
+        "<"
+       ],
+       [
+        "string",
+        ", "
+       ],
+       [
+        "Command",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 46,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
     },
     {
-      "name": "Event",
-      "description": "Event",
-      "type": [
-        [
-          [
-            "Object"
-          ]
-        ]
-      ],
-      "props": [
-        {
-          "name": "name",
-          "description": "Event Name",
-          "type": [
-            [
-              [
-                "string"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "run",
-          "description": "Event Run Function",
-          "type": [
-            [
-              [
-                "function"
-              ]
-            ]
-          ]
-        },
-        {
-          "name": "emitter",
-          "description": "Event Emitter",
-          "optional": true,
-          "type": [
-            [
-              [
-                "EventEmitter"
-              ]
-            ]
-          ]
-        }
-      ],
-      "meta": {
-        "line": 37,
-        "file": "TypeDefs.ts",
-        "path": "src/interfaces"
-      }
+     "name": "slashCommands",
+     "description": "Slash Commands Collection",
+     "type": [
+      [
+       [
+        "Collection",
+        "<"
+       ],
+       [
+        "string",
+        ", "
+       ],
+       [
+        "SlashCommand",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 52,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "events",
+     "description": "Events Collection",
+     "type": [
+      [
+       [
+        "Collection",
+        "<"
+       ],
+       [
+        "string",
+        ", "
+       ],
+       [
+        "Event",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 58,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
     }
-  ],
-  "externals": []
+   ],
+   "methods": [
+    {
+     "name": "init",
+     "description": "Method that initializing module.",
+     "access": "private",
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 71,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "loadCommands",
+     "description": "Method that loads all the availible Commands",
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 87,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "loadSlashCommands",
+     "description": "Method that loads all the availible Slash Commands",
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 112,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "loadEvents",
+     "description": "Method that loads all the availible Events",
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 137,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "registerSlashCommands",
+     "description": "Method that Registering Slash Commands to All the Guilds",
+     "access": "private",
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "string",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 166,
+      "file": "Handler.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 21,
+    "file": "Handler.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "SlashCommand",
+   "description": "Command Class",
+   "props": [
+    {
+     "name": "name",
+     "description": "Slash Command Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 23,
+      "file": "SlashCommand.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "description",
+     "description": "Slash Command Description",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 29,
+      "file": "SlashCommand.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "type",
+     "description": "Slash Command Type",
+     "type": [
+      [
+       [
+        "ApplicationCommandType"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 35,
+      "file": "SlashCommand.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "options",
+     "description": "Slash Command Options",
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "ApplicationCommandOptionData",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 43,
+      "file": "SlashCommand.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "defaultPermission",
+     "description": "Whether the command is enabled by default when the app is added to a guild",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 51,
+      "file": "SlashCommand.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "run",
+     "description": "Run Method",
+     "params": [
+      {
+       "name": "client",
+       "description": "Discord Client",
+       "type": [
+        [
+         [
+          "Client"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "message",
+       "description": "Discord Message",
+       "type": [
+        [
+         [
+          "Message"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "args",
+       "description": "Arguments",
+       "type": [
+        [
+         [
+          "Array",
+          "<"
+         ],
+         [
+          "string",
+          ">"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "unknown",
+        ">"
+       ]
+      ],
+      [
+       [
+        "unknown"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 60,
+      "file": "SlashCommand.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 9,
+    "file": "SlashCommand.ts",
+    "path": "src/classes"
+   }
+  }
+ ],
+ "interfaces": [],
+ "typedefs": [
+  {
+   "name": "Options",
+   "description": "Module Options",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "commandsDir",
+     "description": "Path to Commands Folder",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "slashCommandsDir",
+     "description": "Path to Slash Commands Folder",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "eventsDir",
+     "description": "Path to Events Folder",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "searchPattern",
+     "description": "Pattern for Files (look at the examples)",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 1,
+    "file": "TypeDefs.ts",
+    "path": "src/interfaces"
+   }
+  },
+  {
+   "name": "CommandStruct",
+   "description": "Command",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "name",
+     "description": "Command Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "description",
+     "description": "Command Description",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "aliases",
+     "description": "Command Aliases",
+     "optional": true,
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "string",
+        ">"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "usage",
+     "description": "Command Usage",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "ownerOnly",
+     "description": "Command for Owners Only",
+     "optional": true,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "userPerms",
+     "description": "Required Permissions for User",
+     "optional": true,
+     "type": [
+      [
+       [
+        "PermissionString"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "botPerms",
+     "description": "Required Permissions for Bot",
+     "optional": true,
+     "type": [
+      [
+       [
+        "PermissionString"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 11,
+    "file": "TypeDefs.ts",
+    "path": "src/interfaces"
+   }
+  },
+  {
+   "name": "SlashCommandStruct",
+   "description": "Slash Command",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "name",
+     "description": "Slash Command Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "description",
+     "description": "Slash Command Description",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "type",
+     "description": "Slash Command Type",
+     "optional": true,
+     "type": [
+      [
+       [
+        "ApplicationCommandType"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "options",
+     "description": "Slash Command Options",
+     "optional": true,
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "ApplicationCommandOptionData",
+        ">"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "options",
+     "description": "Slash Command Default Permission",
+     "optional": true,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 24,
+    "file": "TypeDefs.ts",
+    "path": "src/interfaces"
+   }
+  },
+  {
+   "name": "EventStruct",
+   "description": "Event",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "name",
+     "description": "Event Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "emitter",
+     "description": "Event Emitter",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 35,
+    "file": "TypeDefs.ts",
+    "path": "src/interfaces"
+   }
+  },
+  {
+   "name": "SlashCommandTypes",
+   "description": "Shash Command Types\n\n* CHAT_INPUT\n* USER\n* MESSAGE",
+   "type": [
+    [
+     [
+      "\"CHAT_INPUT",
+      "\""
+     ]
+    ],
+    [
+     [
+      "\"USER",
+      "\""
+     ]
+    ],
+    [
+     [
+      "\"MESSAGE",
+      "\""
+     ]
+    ]
+   ],
+   "meta": {
+    "line": 43,
+    "file": "TypeDefs.ts",
+    "path": "src/interfaces"
+   }
+  }
+ ],
+ "externals": []
 }
