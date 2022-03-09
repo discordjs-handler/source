@@ -65,7 +65,6 @@ export class Command implements CommandStruct {
   /**
    * Run Method
    *
-   * @abstract
    * @param {Client} client Discord Client
    * @param {Message} message Discord Message
    * @param {string[]} args Arguments

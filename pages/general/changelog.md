@@ -8,3 +8,5 @@
   - Added more JSDoc
 - **Version 1.1.0 - Global Update**
   - Full Rewrite
+- **Version 1.1.1 - Global Update**
+  - Code Fixes
