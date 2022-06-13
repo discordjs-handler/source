@@ -1,5 +1,5 @@
 import { Client } from "discord.js";
-import { Handler } from "..";
+import { Handler } from "../index";
 
 export interface EventStruct {
   name: string;
