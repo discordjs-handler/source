@@ -22,19 +22,19 @@
 <strong>Or you can view our [examples folder](https://github.com/discordjs-handler/source/tree/stable/examples).</strong> <br>
 
 ```js
-const { Client } = require('discord.js')
-const { Handler } = require('discordjs-handler')
+const { Client } = require("discord.js");
+const { Handler } = require("discordjs-handler");
 
 const client = new Client({
-    intents: ['GUILDS', 'GUILD_MESSAGES'],
-})
+  intents: ["GUILDS", "GUILD_MESSAGES"],
+});
 const handler = new Handler({
-    commandsDir: `${__dirname}/commands`,
-    slashCommandsDir: `${__dirname}/slashCommands`,
-    eventsDir: `${__dirname}/events`,
+  commandsDir: `${__dirname}/commands`,
+  slashCommandsDir: `${__dirname}/slashCommands`,
+  eventsDir: `${__dirname}/events`,
 
-    searchPattern: '**/*{.js,.ts}',
-})
+  searchPattern: "**/*{.js,.ts}",
+});
 ```
 
 ## Links
