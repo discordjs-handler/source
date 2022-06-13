@@ -15,6 +15,7 @@ import { SlashCommandStruct } from "../interfaces/SlashCommand";
 export class SlashCommand implements SlashCommandStruct {
   public name: string;
   public description: string;
+  public disabled?: boolean;
   public type?: ApplicationCommandType;
   public defaultPermission?: boolean;
   public options?: ApplicationCommandOptionData[];
@@ -33,28 +34,36 @@ export class SlashCommand implements SlashCommandStruct {
     this.description = options.description;
 
     /**
+     * Load command at the start
+     *
+     * @type {boolean}
+     * @default {false}
+     */
+    this.disabled = options?.disabled || false;
+
+    /**
      * Slash Command Type
      *
-     * @type {ApplicationCommandType}
-     * @default CHAT_INPUT
+     * @type {ApplicationCommandTypes}
+     * @default {"CHAT_INPUT"}
      */
-    this.type = options?.type;
+    this.type = options?.type || "CHAT_INPUT";
 
     /**
      * Slash Command Options
      *
      * @type {ApplicationCommandOptionData[]}
-     * @default []
+     * @default {[]}
      */
-    this.options = options?.options;
+    this.options = options?.options || [];
 
     /**
      * Whether the command is enabled by default when the app is added to a guild
      *
      * @type {boolean}
-     * @default true
+     * @default {true}
      */
-    this.defaultPermission = options?.defaultPermission;
+    this.defaultPermission = options?.defaultPermission || true;
   }
 
   /**
@@ -64,12 +73,9 @@ export class SlashCommand implements SlashCommandStruct {
    * @param {Message} message Discord Message
    * @param {string[]} args Arguments
    *
-   * @returns {Promise<unknown> | unknown}
+   * @returns {any}
    */
-  run(
-    client: Client,
-    interaction: CommandInteraction
-  ): Promise<unknown> | unknown {
+  run(client: Client, interaction: CommandInteraction): any {
     throw new Error(
       `Method "run()" isn't used in "${this.name}" Slash Command!`
     );

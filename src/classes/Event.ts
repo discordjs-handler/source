@@ -33,13 +33,9 @@ export class Event implements EventStruct {
    * @param {Handler} handler Handler
    * @param {any[]} params Parameters
    *
-   * @returns {Promise<unknown> | unknown}
+   * @returns {any}
    */
-  public run(
-    client: Client,
-    handler: Handler,
-    ...params: any[]
-  ): Promise<unknown> | unknown {
+  public run(client: Client, handler: Handler, ...params: any[]): any {
     throw new Error(`Method "run()" isn't used in "${this.name}" Event!`);
   }
 }

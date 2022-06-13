@@ -1,7 +1,7 @@
 import { Client, Collection } from "discord.js";
+import { SlashCommand } from "./SlashCommand";
 import { Options } from "./Options";
 import { Command } from "./Command";
-import { SlashCommand } from "./SlashCommand";
 import { Event } from "./Event";
 
 export declare interface Handler {

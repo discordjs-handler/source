@@ -1,8 +1,8 @@
 import { ApplicationCommandData, Client, Collection } from "discord.js";
+import { SlashCommand } from "./SlashCommand";
 import { Options } from "../interfaces/Options";
 import { Command } from "./Command";
 import { Event } from "./Event";
-import { SlashCommand } from "./SlashCommand";
 
 // Promissify
 import { promisify } from "util";
@@ -13,6 +13,7 @@ const glob = promisify(_glob);
 export declare interface Handler {
   client: Client;
   options: Options;
+
   commands: Collection<string, Command>;
   slashCommands: Collection<string, SlashCommand>;
   events: Collection<string, Event>;
@@ -61,9 +62,15 @@ export class Handler {
      */
     this.events = new Collection();
 
+    if (!this.options.debug) {
+      this.options.debug = false;
+    }
+
     this.init();
 
     this.client.on("ready", async () => {
+      if (!this.client.application.owner) await this.client.application.fetch();
+
       await this.registerSlashCommands();
     });
   }
@@ -98,12 +105,14 @@ export class Handler {
         return rej(`[DJS-Handler] No Commands Found.`);
       }
 
-      commandFiles.forEach(async (val) => {
-        const command: Command = new (await (await import(val)).default)();
-        this.commands.set(command.name, command);
+      for (const file of commandFiles) {
+        const command: Command = new (await (await import(file)).default)();
+        if (command.disabled) continue;
 
-        console.log(`[DJS-Handler] Command "${command.name}" loaded!`);
-      });
+        this.commands.set(command.name, command);
+        this.options.debug &&
+          console.log(`[DJS-Handler] Command "${command.name}" loaded!`);
+      }
 
       return res(true);
     });
@@ -123,12 +132,16 @@ export class Handler {
         return rej(`[DJS-Handler] No Slash Commands Found.`);
       }
 
-      commandFiles.forEach(async (val) => {
-        const command: SlashCommand = new (await (await import(val)).default)();
-        this.slashCommands.set(command.name, command);
+      for (const file of commandFiles) {
+        const command: SlashCommand = new (await (
+          await import(file)
+        ).default)();
+        if (command.disabled) continue;
 
-        console.log(`[DJS-Handler] Slash Command "${command.name}" loaded!`);
-      });
+        this.slashCommands.set(command.name, command);
+        this.options.debug &&
+          console.log(`[DJS-Handler] Slash Command "${command.name}" loaded!`);
+      }
 
       return res(true);
     });
@@ -148,16 +161,17 @@ export class Handler {
         return rej(`[DJS-Handler] No Events Found.`);
       }
 
-      eventFiles.forEach(async (val) => {
-        const event: Event = new (await (await import(val)).default)();
+      for (const file of eventFiles) {
+        const event: Event = new (await (await import(file)).default)();
         this.events.set(event.name, event);
 
         (this.client[event.emitter] || this.client).on(event.name, (...args) =>
           event.run(this.client, this, ...args)
         );
 
-        console.log(`[DJS-Handler] Event "${event.name}" loaded!`);
-      });
+        this.options.debug &&
+          console.log(`[DJS-Handler] Event "${event.name}" loaded!`);
+      }
 
       return res(true);
     });
