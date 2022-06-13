@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1655154534367
+  "date": 1655154704764
  },
  "custom": {
   "general": {
@@ -972,6 +972,19 @@
      ]
     },
     {
+     "name": "category",
+     "description": "Command Category",
+     "optional": true,
+     "default": "Miscellaneous",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
      "name": "cooldown",
      "description": "Command Cooldown",
      "optional": true,
@@ -987,6 +1000,32 @@
     {
      "name": "disabled",
      "description": "Load Command at the start",
+     "optional": true,
+     "default": false,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "guildOnly",
+     "description": "Can Command be used only in Guilds",
+     "optional": true,
+     "default": false,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "dmOnly",
+     "description": "Can Command be used only in DMs",
      "optional": true,
      "default": false,
      "type": [
@@ -1130,7 +1169,7 @@
     }
    ],
    "meta": {
-    "line": 244,
+    "line": 247,
     "file": "Handler.ts",
     "path": "src/classes"
    }
@@ -1171,7 +1210,7 @@
     }
    ],
    "meta": {
-    "line": 256,
+    "line": 259,
     "file": "Handler.ts",
     "path": "src/classes"
    }
@@ -1187,7 +1226,7 @@
     ]
    ],
    "meta": {
-    "line": 264,
+    "line": 267,
     "file": "Handler.ts",
     "path": "src/classes"
    }
