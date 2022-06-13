@@ -234,8 +234,11 @@ export class Handler {
  * @prop {string} [description] Command Description
  * @prop {string} [usage] Command Usage
  * @prop {string[]} [aliases] Command Aliases
+ * @prop {number} [category=Miscellaneous] Command Category
  * @prop {number} [cooldown=0] Command Cooldown
  * @prop {boolean} [disabled=false] Load Command at the start
+ * @prop {boolean} [guildOnly=false] Can Command be used only in Guilds
+ * @prop {boolean} [dmOnly=false] Can Command be used only in DMs
  * @prop {boolean} [ownerOnly=false] Command for Owners Only
  * @prop {PermissionString} [userPerms] Required Permissions for User
  * @prop {PermissionString} [botPerms] Required Permissions for Bot

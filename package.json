@@ -1,6 +1,6 @@
 {
 	"name": "@badboy-discord/discordjs-handler",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "discordjs-handler will simplify creating Command and Event Handler for your Discord Bot.",
 	"main": "dist/index.js",
 	"types": "typings/Handler.d.ts",
