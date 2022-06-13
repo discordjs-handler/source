@@ -12,9 +12,14 @@ export class Command implements CommandStruct {
   public description?: string;
   public usage?: string;
   public aliases?: string[];
+  public category?: string;
+
   public cooldown?: number;
   public disabled?: boolean;
+  public guildOnly?: boolean;
+  public dmOnly?: boolean;
   public ownerOnly?: boolean;
+
   public userPerms?: PermissionString[];
   public botPerms?: PermissionString[];
 
@@ -50,6 +55,14 @@ export class Command implements CommandStruct {
     this.aliases = options?.aliases || [];
 
     /**
+     * Command Category
+     *
+     * @type {string}
+     * @default {"Miscellaneous"}
+     */
+    this.category = options?.category || "Miscellaneous";
+
+    /**
      * Command Cooldown
      *
      * @type {number}
@@ -64,6 +77,22 @@ export class Command implements CommandStruct {
      * @default {false}
      */
     this.disabled = options?.disabled || false;
+
+    /**
+     * Can Command be used only in Guilds
+     *
+     * @type {boolean}
+     * @default {true}
+     */
+    this.guildOnly = options?.guildOnly || true;
+
+    /**
+     * Can Command be used only in DMs
+     *
+     * @type {boolean}
+     * @default {false}
+     */
+    this.dmOnly = options?.dmOnly || false;
 
     /**
      * For Owner or not

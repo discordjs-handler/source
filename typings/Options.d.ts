@@ -1,5 +1,6 @@
 export interface Options {
   debug?: boolean;
+  owners?: string[];
 
   commandsDir: string;
   slashCommandsDir: string;
