@@ -1,48 +1,50 @@
 {
-  "name": "@badboy-discord/discordjs-handler",
-  "version": "1.1.2",
-  "description": "discordjs-handler will simplify creating Command and Event Handler for your Discord Bot.",
-  "main": "dist/index.js",
-  "types": "typings/Handler.d.ts",
-  "scripts": {
-    "deploy": "git add . && gitmoji -c",
-    "postinstall": "tsc -p tsconfig.json",
-    "docs": "docgen -s src/*.ts src/**/*.ts -o docs/docs.json -c pages/index.yml -g -S 1 -j .jsconfig.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/discordjs-handler/source.git"
-  },
-  "keywords": [
-    "discord",
-    "discord-bot",
-    "discord.js",
-    "handler",
-    "discord-handler",
-    "discord.js-handler"
-  ],
-  "author": "badboy-discord & xyligan-gp",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/discordjs-handler/source/issues"
-  },
-  "homepage": "https://github.com/discordjs-handler/source#readme",
-  "dependencies": {
-    "discord.js": "^13.8.0",
-    "glob": "^8.0.3",
-    "typescript": "^4.7.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.18.5",
-    "@babel/plugin-proposal-class-properties": "^7.17.12",
-    "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
-    "@babel/preset-env": "^7.18.2",
-    "@babel/preset-typescript": "^7.17.12",
-    "@distube/docgen": "distubejs/docgen",
-    "@types/glob": "^7.2.0",
-    "jsdoc-babel": "^0.5.0"
-  },
-  "engines": {
-    "node": ">=16"
-  }
+	"name": "@badboy-discord/discordjs-handler",
+	"version": "1.2.0",
+	"description": "discordjs-handler will simplify creating Command and Event Handler for your Discord Bot.",
+	"main": "dist/index.js",
+	"types": "typings/Handler.d.ts",
+	"scripts": {
+		"deploy": "git add . && gitmoji -c",
+		"postinstall": "tsc -p tsconfig.json",
+		"docs": "docgen -s src/*.ts src/**/*.ts -o docs/docs.json -c pages/index.yml -g -S 1 -j .jsconfig.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/discordjs-handler/source.git"
+	},
+	"keywords": [
+		"discord",
+		"discord-bot",
+		"discord.js",
+		"handler",
+		"discord-handler",
+		"discord.js-handler"
+	],
+	"author": "badboy-discord & xyligan-gp",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/discordjs-handler/source/issues"
+	},
+	"homepage": "https://github.com/discordjs-handler/source#readme",
+	"dependencies": {
+		"discord.js": "^13.8.0",
+		"glob": "^8.0.3",
+		"typescript": "^4.7.3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.18.5",
+		"@babel/plugin-proposal-class-properties": "^7.17.12",
+		"@babel/plugin-proposal-object-rest-spread": "^7.18.0",
+		"@babel/preset-env": "^7.18.2",
+		"@babel/preset-typescript": "^7.17.12",
+		"@distube/docgen": "distubejs/docgen",
+		"@types/glob": "^7.2.0",
+		"@types/semver": "^7.3.9",
+		"jsdoc-babel": "^0.5.0",
+		"semver": "^7.3.7"
+	},
+	"engines": {
+		"node": ">=16"
+	}
 }

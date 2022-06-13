@@ -1,9 +1,9 @@
 .github
+.gitignore
 .vscode
 .jsconfig.json
 .babelrc.json
-node_modules
-docs
-dist
-tests
-examples
+node_modules/
+dist/
+examples/
+scripts/
