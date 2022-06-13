@@ -43,5 +43,5 @@ const handler = new Handler({
 <b>Discord Tags: [WhyMe#1126](https://discord.com/users/974064528289562644), [♡ xүℓ[ι]gαη4εg ♡#9457](https://discord.com/users/533347075463577640)<br>
 <b>NodeJS: [Click](https://www.nodejs.org/)<br>
 <b>TypeScript: [Click](https://www.typescriptlang.org)<br>
-<b>Support Server: [Click](https://discord.gg/eGZfaWsZgR)<br>
+<b>Support Server: [Click](https://discord.gg/zsTgXs24k2)<br>
 <b>Website: [Click](https://discordjs-handler.js.org/)</b>
