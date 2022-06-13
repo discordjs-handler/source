@@ -40,7 +40,7 @@ const handler = new Handler({
 ## Links
 
 <b>Authors: [badboy-discord](https://www.npmjs.com/~badboy-discord), [xyligan-gp](https://www.npmjs.com/~xyligan-gp)<br>
-<b>Discord Tags: [goose#1046](https://discord.com/users/545956523571150858), [♡ xүℓ[ι]gαη4εg ♡#9457](https://discord.com/users/533347075463577640)<br>
+<b>Discord Tags: [WhyMe#1126](https://discord.com/users/974064528289562644), [♡ xүℓ[ι]gαη4εg ♡#9457](https://discord.com/users/533347075463577640)<br>
 <b>NodeJS: [Click](https://www.nodejs.org/)<br>
 <b>TypeScript: [Click](https://www.typescriptlang.org)<br>
 <b>Support Server: [Click](https://discord.gg/eGZfaWsZgR)<br>
