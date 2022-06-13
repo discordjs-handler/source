@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1647347704128
+  "date": 1655130926417
  },
  "custom": {
   "general": {
@@ -39,7 +39,7 @@
       ]
      ],
      "meta": {
-      "line": 20,
+      "line": 22,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -55,7 +55,23 @@
       ]
      ],
      "meta": {
-      "line": 26,
+      "line": 28,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "usage",
+     "description": "Command Usage",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 36,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -76,7 +92,39 @@
       ]
      ],
      "meta": {
-      "line": 32,
+      "line": 44,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "cooldown",
+     "description": "Command Cooldown",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 52,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "disabled",
+     "description": "Load Command at the start",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 60,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -92,7 +140,7 @@
       ]
      ],
      "meta": {
-      "line": 40,
+      "line": 68,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -113,7 +161,7 @@
       ]
      ],
      "meta": {
-      "line": 48,
+      "line": 76,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -134,7 +182,7 @@
       ]
      ],
      "meta": {
-      "line": 56,
+      "line": 84,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -187,22 +235,12 @@
      "returns": [
       [
        [
-        "Promise",
-        "<"
-       ],
-       [
-        "unknown",
-        ">"
-       ]
-      ],
-      [
-       [
-        "unknown"
+        "any"
        ]
       ]
      ],
      "meta": {
-      "line": 65,
+      "line": 93,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -299,17 +337,7 @@
      "returns": [
       [
        [
-        "Promise",
-        "<"
-       ],
-       [
-        "unknown",
-        ">"
-       ]
-      ],
-      [
-       [
-        "unknown"
+        "any"
        ]
       ]
      ],
@@ -368,7 +396,7 @@
       ]
      ],
      "meta": {
-      "line": 34,
+      "line": 35,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -384,7 +412,7 @@
       ]
      ],
      "meta": {
-      "line": 40,
+      "line": 41,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -409,7 +437,7 @@
       ]
      ],
      "meta": {
-      "line": 46,
+      "line": 47,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -434,7 +462,7 @@
       ]
      ],
      "meta": {
-      "line": 52,
+      "line": 53,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -459,7 +487,7 @@
       ]
      ],
      "meta": {
-      "line": 58,
+      "line": 59,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -483,7 +511,7 @@
       ]
      ],
      "meta": {
-      "line": 71,
+      "line": 78,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -504,7 +532,7 @@
       ]
      ],
      "meta": {
-      "line": 87,
+      "line": 94,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -525,7 +553,7 @@
       ]
      ],
      "meta": {
-      "line": 112,
+      "line": 121,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -546,7 +574,7 @@
       ]
      ],
      "meta": {
-      "line": 137,
+      "line": 150,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -572,14 +600,14 @@
       ]
      ],
      "meta": {
-      "line": 166,
+      "line": 180,
       "file": "Handler.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 21,
+    "line": 22,
     "file": "Handler.ts",
     "path": "src/classes"
    }
@@ -599,7 +627,7 @@
       ]
      ],
      "meta": {
-      "line": 23,
+      "line": 24,
       "file": "SlashCommand.ts",
       "path": "src/classes"
      }
@@ -615,7 +643,23 @@
       ]
      ],
      "meta": {
-      "line": 29,
+      "line": 30,
+      "file": "SlashCommand.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "disabled",
+     "description": "Load command at the start",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 36,
       "file": "SlashCommand.ts",
       "path": "src/classes"
      }
@@ -626,12 +670,12 @@
      "type": [
       [
        [
-        "ApplicationCommandType"
+        "ApplicationCommandTypes"
        ]
       ]
      ],
      "meta": {
-      "line": 35,
+      "line": 44,
       "file": "SlashCommand.ts",
       "path": "src/classes"
      }
@@ -652,7 +696,7 @@
       ]
      ],
      "meta": {
-      "line": 43,
+      "line": 52,
       "file": "SlashCommand.ts",
       "path": "src/classes"
      }
@@ -668,7 +712,7 @@
       ]
      ],
      "meta": {
-      "line": 51,
+      "line": 60,
       "file": "SlashCommand.ts",
       "path": "src/classes"
      }
@@ -721,22 +765,12 @@
      "returns": [
       [
        [
-        "Promise",
-        "<"
-       ],
-       [
-        "unknown",
-        ">"
-       ]
-      ],
-      [
-       [
-        "unknown"
+        "any"
        ]
       ]
      ],
      "meta": {
-      "line": 60,
+      "line": 69,
       "file": "SlashCommand.ts",
       "path": "src/classes"
      }
@@ -750,326 +784,6 @@
   }
  ],
  "interfaces": [],
- "typedefs": [
-  {
-   "name": "Options",
-   "description": "Module Options",
-   "type": [
-    [
-     [
-      "Object"
-     ]
-    ]
-   ],
-   "props": [
-    {
-     "name": "commandsDir",
-     "description": "Path to Commands Folder",
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "slashCommandsDir",
-     "description": "Path to Slash Commands Folder",
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "eventsDir",
-     "description": "Path to Events Folder",
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "searchPattern",
-     "description": "Pattern for Files (look at the examples)",
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    }
-   ],
-   "meta": {
-    "line": 1,
-    "file": "TypeDefs.ts",
-    "path": "src/interfaces"
-   }
-  },
-  {
-   "name": "CommandStruct",
-   "description": "Command",
-   "type": [
-    [
-     [
-      "Object"
-     ]
-    ]
-   ],
-   "props": [
-    {
-     "name": "name",
-     "description": "Command Name",
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "description",
-     "description": "Command Description",
-     "optional": true,
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "aliases",
-     "description": "Command Aliases",
-     "optional": true,
-     "type": [
-      [
-       [
-        "Array",
-        "<"
-       ],
-       [
-        "string",
-        ">"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "usage",
-     "description": "Command Usage",
-     "optional": true,
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "ownerOnly",
-     "description": "Command for Owners Only",
-     "optional": true,
-     "type": [
-      [
-       [
-        "boolean"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "userPerms",
-     "description": "Required Permissions for User",
-     "optional": true,
-     "type": [
-      [
-       [
-        "PermissionString"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "botPerms",
-     "description": "Required Permissions for Bot",
-     "optional": true,
-     "type": [
-      [
-       [
-        "PermissionString"
-       ]
-      ]
-     ]
-    }
-   ],
-   "meta": {
-    "line": 11,
-    "file": "TypeDefs.ts",
-    "path": "src/interfaces"
-   }
-  },
-  {
-   "name": "SlashCommandStruct",
-   "description": "Slash Command",
-   "type": [
-    [
-     [
-      "Object"
-     ]
-    ]
-   ],
-   "props": [
-    {
-     "name": "name",
-     "description": "Slash Command Name",
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "description",
-     "description": "Slash Command Description",
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "type",
-     "description": "Slash Command Type",
-     "optional": true,
-     "type": [
-      [
-       [
-        "ApplicationCommandType"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "options",
-     "description": "Slash Command Options",
-     "optional": true,
-     "type": [
-      [
-       [
-        "Array",
-        "<"
-       ],
-       [
-        "ApplicationCommandOptionData",
-        ">"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "options",
-     "description": "Slash Command Default Permission",
-     "optional": true,
-     "type": [
-      [
-       [
-        "boolean"
-       ]
-      ]
-     ]
-    }
-   ],
-   "meta": {
-    "line": 24,
-    "file": "TypeDefs.ts",
-    "path": "src/interfaces"
-   }
-  },
-  {
-   "name": "EventStruct",
-   "description": "Event",
-   "type": [
-    [
-     [
-      "Object"
-     ]
-    ]
-   ],
-   "props": [
-    {
-     "name": "name",
-     "description": "Event Name",
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    },
-    {
-     "name": "emitter",
-     "description": "Event Emitter",
-     "optional": true,
-     "type": [
-      [
-       [
-        "string"
-       ]
-      ]
-     ]
-    }
-   ],
-   "meta": {
-    "line": 35,
-    "file": "TypeDefs.ts",
-    "path": "src/interfaces"
-   }
-  },
-  {
-   "name": "SlashCommandTypes",
-   "description": "Shash Command Types\n\n* CHAT_INPUT\n* USER\n* MESSAGE",
-   "type": [
-    [
-     [
-      "\"CHAT_INPUT",
-      "\""
-     ]
-    ],
-    [
-     [
-      "\"USER",
-      "\""
-     ]
-    ],
-    [
-     [
-      "\"MESSAGE",
-      "\""
-     ]
-    ]
-   ],
-   "meta": {
-    "line": 43,
-    "file": "TypeDefs.ts",
-    "path": "src/interfaces"
-   }
-  }
- ],
+ "typedefs": [],
  "externals": []
 }
