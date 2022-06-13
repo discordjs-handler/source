@@ -9,10 +9,12 @@ import { CommandStruct } from "../interfaces/Command";
  */
 export class Command implements CommandStruct {
   public name: string;
-  public description: string;
-  public aliases?: string[];
-  public ownerOnly?: boolean;
+  public description?: string;
   public usage?: string;
+  public aliases?: string[];
+  public cooldown?: number;
+  public disabled?: boolean;
+  public ownerOnly?: boolean;
   public userPerms?: PermissionString[];
   public botPerms?: PermissionString[];
 
@@ -25,41 +27,67 @@ export class Command implements CommandStruct {
 
     /**
      * Command Description
+     *
      * @type {string}
+     * @default {"None"}
      */
-    this.description = options.description;
+    this.description = options?.description || "None";
+
+    /**
+     * Command Usage
+     *
+     * @type {string}
+     * @default {"None"}
+     */
+    this.usage = options?.usage || "None";
 
     /**
      * Command Aliases
      *
      * @type {string[]}
-     * @default []
+     * @default {[]}
      */
-    this.aliases = options?.aliases;
+    this.aliases = options?.aliases || [];
+
+    /**
+     * Command Cooldown
+     *
+     * @type {number}
+     * @default {0}
+     */
+    this.cooldown = options?.cooldown || 0;
+
+    /**
+     * Load Command at the start
+     *
+     * @type {boolean}
+     * @default {false}
+     */
+    this.disabled = options?.disabled || false;
 
     /**
      * For Owner or not
      *
      * @type {boolean}
-     * @default false
+     * @default {false}
      */
-    this.ownerOnly = options?.ownerOnly;
+    this.ownerOnly = options?.ownerOnly || false;
 
     /**
      * Required User Permissions
      *
      * @type {PermissionString[]}
-     * @default []
+     * @default {[]}
      */
-    this.userPerms = options?.userPerms;
+    this.userPerms = options?.userPerms || [];
 
     /**
      * Required Bot Permissions
      *
      * @type {PermissionString[]}
-     * @default []
+     * @default {[]}
      */
-    this.botPerms = options?.botPerms;
+    this.botPerms = options?.botPerms || [];
   }
 
   /**
@@ -69,13 +97,11 @@ export class Command implements CommandStruct {
    * @param {Message} message Discord Message
    * @param {string[]} args Arguments
    *
-   * @returns {Promise<unknown> | unknown}
+   * @returns {any}
    */
-  public run(
-    client: Client,
-    message: Message,
-    args: string[]
-  ): Promise<unknown> | unknown {
-    throw new Error(`Method "run()" isn't used in "${this.name}" Command!`);
+  public run(client: Client, message: Message, args: string[]): any {
+    throw new Error(
+      `[DJS-Handler] Method "run()" isn't used in "${this.name}" Command!`
+    );
   }
 }

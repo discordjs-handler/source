@@ -9,6 +9,7 @@ import { SlashCommandStruct } from "../src/interfaces/SlashCommand";
 export declare interface SlashCommand {
   name: string;
   description: string;
+  disabled?: boolean;
   type?: ApplicationCommandType;
   defaultPermission?: boolean;
   options?: ApplicationCommandOptionData[];
@@ -17,8 +18,14 @@ export declare interface SlashCommand {
 export declare abstract class SlashCommand implements SlashCommandStruct {
   constructor(options: SlashCommandStruct);
 
-  abstract run(
-    client: Client,
-    interaction: CommandInteraction
-  ): Promise<unknown> | unknown;
+  /**
+   * Run Method
+   *
+   * @abstract
+   * @param {Client} client Discord Client
+   * @param {CommandInteraction} interaction Command Interaction
+   *
+   * @returns {any}
+   */
+  abstract run(client: Client, interaction: CommandInteraction): any;
 }

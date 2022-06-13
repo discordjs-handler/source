@@ -1,7 +1,9 @@
 export interface Options {
-    commandsDir: string;
-    slashCommandsDir: string;
-    eventsDir: string;
+  debug?: boolean;
 
-    searchPattern: string;
+  commandsDir: string;
+  slashCommandsDir: string;
+  eventsDir: string;
+
+  searchPattern: string;
 }

@@ -6,6 +6,7 @@ import {
 export interface SlashCommandStruct {
   name: string;
   description: string;
+  disabled?: boolean;
   type?: ApplicationCommandType;
   options?: ApplicationCommandOptionData[];
   defaultPermission?: boolean;
