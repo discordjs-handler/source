@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1655130616395
+  "date": 1655154534367
  },
  "custom": {
   "general": {
@@ -39,7 +39,7 @@
       ]
      ],
      "meta": {
-      "line": 22,
+      "line": 27,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -55,7 +55,7 @@
       ]
      ],
      "meta": {
-      "line": 28,
+      "line": 33,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -71,7 +71,7 @@
       ]
      ],
      "meta": {
-      "line": 36,
+      "line": 41,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -92,7 +92,23 @@
       ]
      ],
      "meta": {
-      "line": 44,
+      "line": 49,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "category",
+     "description": "Command Category",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 57,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -108,7 +124,7 @@
       ]
      ],
      "meta": {
-      "line": 52,
+      "line": 65,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -124,7 +140,39 @@
       ]
      ],
      "meta": {
-      "line": 60,
+      "line": 73,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "guildOnly",
+     "description": "Can Command be used only in Guilds",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 81,
+      "file": "Command.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "dmOnly",
+     "description": "Can Command be used only in DMs",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 89,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -140,7 +188,7 @@
       ]
      ],
      "meta": {
-      "line": 68,
+      "line": 97,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -161,7 +209,7 @@
       ]
      ],
      "meta": {
-      "line": 76,
+      "line": 105,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -182,7 +230,7 @@
       ]
      ],
      "meta": {
-      "line": 84,
+      "line": 113,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -240,7 +288,7 @@
       ]
      ],
      "meta": {
-      "line": 93,
+      "line": 122,
       "file": "Command.ts",
       "path": "src/classes"
      }
@@ -396,7 +444,7 @@
       ]
      ],
      "meta": {
-      "line": 35,
+      "line": 36,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -412,7 +460,7 @@
       ]
      ],
      "meta": {
-      "line": 41,
+      "line": 42,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -437,7 +485,7 @@
       ]
      ],
      "meta": {
-      "line": 47,
+      "line": 48,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -462,7 +510,7 @@
       ]
      ],
      "meta": {
-      "line": 53,
+      "line": 54,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -487,7 +535,7 @@
       ]
      ],
      "meta": {
-      "line": 59,
+      "line": 60,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -511,7 +559,7 @@
       ]
      ],
      "meta": {
-      "line": 78,
+      "line": 82,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -532,7 +580,7 @@
       ]
      ],
      "meta": {
-      "line": 94,
+      "line": 98,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -553,7 +601,7 @@
       ]
      ],
      "meta": {
-      "line": 121,
+      "line": 125,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -574,7 +622,7 @@
       ]
      ],
      "meta": {
-      "line": 150,
+      "line": 154,
       "file": "Handler.ts",
       "path": "src/classes"
      }
@@ -600,14 +648,14 @@
       ]
      ],
      "meta": {
-      "line": 180,
+      "line": 184,
       "file": "Handler.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 22,
+    "line": 23,
     "file": "Handler.ts",
     "path": "src/classes"
    }
@@ -784,6 +832,366 @@
   }
  ],
  "interfaces": [],
- "typedefs": [],
+ "typedefs": [
+  {
+   "name": "Options",
+   "description": "Module Options",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "debug",
+     "description": "Debug Mode",
+     "optional": true,
+     "default": false,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "commandsDir",
+     "description": "Path to Commands Folder",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "slashCommandsDir",
+     "description": "Path to Slash Commands Folder",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "eventsDir",
+     "description": "Path to Events Folder",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "searchPattern",
+     "description": "Pattern for Files (look at the examples)",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 218,
+    "file": "Handler.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "CommandStruct",
+   "description": "Command",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "name",
+     "description": "Command Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "description",
+     "description": "Command Description",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "usage",
+     "description": "Command Usage",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "aliases",
+     "description": "Command Aliases",
+     "optional": true,
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "string",
+        ">"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "cooldown",
+     "description": "Command Cooldown",
+     "optional": true,
+     "default": 0,
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "disabled",
+     "description": "Load Command at the start",
+     "optional": true,
+     "default": false,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "ownerOnly",
+     "description": "Command for Owners Only",
+     "optional": true,
+     "default": false,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "userPerms",
+     "description": "Required Permissions for User",
+     "optional": true,
+     "type": [
+      [
+       [
+        "PermissionString"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "botPerms",
+     "description": "Required Permissions for Bot",
+     "optional": true,
+     "type": [
+      [
+       [
+        "PermissionString"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 229,
+    "file": "Handler.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "SlashCommandStruct",
+   "description": "Slash Command",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "name",
+     "description": "Slash Command Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "description",
+     "description": "Slash Command Description",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "disabled",
+     "description": "Load command at the start",
+     "optional": true,
+     "default": false,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "type",
+     "description": "Slash Command Type",
+     "optional": true,
+     "type": [
+      [
+       [
+        "ApplicationCommandType"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "options",
+     "description": "Slash Command Options",
+     "optional": true,
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "ApplicationCommandOptionData",
+        ">"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "defaultPermission",
+     "description": "Slash Command Default Permission",
+     "optional": true,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 244,
+    "file": "Handler.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EventStruct",
+   "description": "Event",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "name",
+     "description": "Event Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "emitter",
+     "description": "Event Emitter",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 256,
+    "file": "Handler.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "SlashCommandTypes",
+   "description": "Shash Command Types\n\n* (1) CHAT_INPUT\n* (2) USER\n* (3) MESSAGE",
+   "type": [
+    [
+     [
+      "ApplicationCommandTypes"
+     ]
+    ]
+   ],
+   "meta": {
+    "line": 264,
+    "file": "Handler.ts",
+    "path": "src/classes"
+   }
+  }
+ ],
  "externals": []
 }
