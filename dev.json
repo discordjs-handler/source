@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1655161569174
+  "date": 1655215512649
  },
  "custom": {
   "general": {
@@ -283,7 +283,17 @@
      "returns": [
       [
        [
-        "any"
+        "Promise",
+        "<"
+       ],
+       [
+        "unknown",
+        ">"
+       ]
+      ],
+      [
+       [
+        "unknown"
        ]
       ]
      ],
@@ -385,7 +395,17 @@
      "returns": [
       [
        [
-        "any"
+        "Promise",
+        "<"
+       ],
+       [
+        "unknown",
+        ">"
+       ]
+      ],
+      [
+       [
+        "unknown"
        ]
       ]
      ],
@@ -813,7 +833,17 @@
      "returns": [
       [
        [
-        "any"
+        "Promise",
+        "<"
+       ],
+       [
+        "unknown",
+        ">"
+       ]
+      ],
+      [
+       [
+        "unknown"
        ]
       ]
      ],
