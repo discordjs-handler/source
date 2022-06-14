@@ -29,7 +29,11 @@ export declare abstract class Command implements CommandStruct {
    * @param {Message} message Discord Message
    * @param {string[]} args Arguments
    *
-   * @returns {any}
+   * @returns {Promise<unknown> | unknown}
    */
-  abstract run(client: Client, message: Message, args: string[]): any;
+  abstract run(
+    client: Client,
+    message: Message,
+    args: string[]
+  ): Promise<unknown> | unknown;
 }

@@ -18,7 +18,11 @@ export declare abstract class Event implements EventStruct {
    * @param {Handler} handler Handler
    * @param {any[]} params Parameters
    *
-   * @returns {any}
+   * @returns {Promise<unknown> | unknown}
    */
-  abstract run(client: Client, handler: Handler, ...params: any[]): any;
+  abstract run(
+    client: Client,
+    handler: Handler,
+    ...params: any[]
+  ): Promise<unknown> | unknown;
 }

@@ -126,9 +126,13 @@ export class Command implements CommandStruct {
    * @param {Message} message Discord Message
    * @param {string[]} args Arguments
    *
-   * @returns {any}
+   * @returns {Promise<unknown> | unknown}
    */
-  public run(client: Client, message: Message, args: string[]): any {
+  public run(
+    client: Client,
+    message: Message,
+    args: string[]
+  ): Promise<unknown> | unknown {
     throw new Error(
       `[DJS-Handler] Method "run()" isn't used in "${this.name}" Command!`
     );
