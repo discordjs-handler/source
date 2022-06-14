@@ -25,7 +25,10 @@ export declare abstract class SlashCommand implements SlashCommandStruct {
    * @param {Client} client Discord Client
    * @param {CommandInteraction} interaction Command Interaction
    *
-   * @returns {any}
+   * @returns {Promise<unknown> | unknown}
    */
-  abstract run(client: Client, interaction: CommandInteraction): any;
+  abstract run(
+    client: Client,
+    interaction: CommandInteraction
+  ): Promise<unknown> | unknown;
 }

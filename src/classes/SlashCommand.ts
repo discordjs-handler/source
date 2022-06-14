@@ -73,9 +73,12 @@ export class SlashCommand implements SlashCommandStruct {
    * @param {Message} message Discord Message
    * @param {string[]} args Arguments
    *
-   * @returns {any}
+   * @returns {Promise<unknown> | unknown}
    */
-  run(client: Client, interaction: CommandInteraction): any {
+  run(
+    client: Client,
+    interaction: CommandInteraction
+  ): Promise<unknown> | unknown {
     throw new Error(
       `Method "run()" isn't used in "${this.name}" Slash Command!`
     );
