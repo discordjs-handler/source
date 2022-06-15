@@ -4,10 +4,11 @@ import { Handler } from "../src";
 const client = new Client({
   intents: ["GUILDS", "GUILD_MESSAGES"],
 });
-const handler = new Handler(client, {
-  commandsDir: `${__dirname}/commands/`,
-  eventsDir: `${__dirname}/events`,
-  slashCommandsDir: `${__dirname}/slashCommands`,
+
+new Handler(client, {
+  commandsDir: `./commands`,
+  eventsDir: `./events`,
+  slashCommandsDir: `./slashCommands`,
   searchPattern: "/**/*.ts",
 });
 

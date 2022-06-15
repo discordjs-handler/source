@@ -5,9 +5,10 @@ import { Options } from "../interfaces/Options";
 import { Command } from "./Command";
 import { Event } from "./Event";
 
-// Promissify
+// FS
 import { promisify } from "util";
 import _glob from "glob";
+import path from "path";
 
 const glob = promisify(_glob);
 
@@ -87,9 +88,17 @@ export class Handler {
    */
   private init(): Promise<boolean> {
     return new Promise(async (res, rej) => {
-      await this.loadCommands().catch(rej);
-      await this.loadEvents().catch(rej);
-      await this.loadSlashCommands().catch(rej);
+      await this.loadCommands().catch((res) => {
+        console.log(res);
+      });
+
+      await this.loadEvents().catch((res) => {
+        console.log(res);
+      });
+
+      await this.loadSlashCommands().catch((res) => {
+        console.log(res);
+      });
 
       return res(true);
     });
@@ -110,7 +119,8 @@ export class Handler {
       }
 
       for (const file of commandFiles) {
-        const command: Command = new (await (await import(file)).default)();
+        const dir = path.resolve(process.cwd(), file);
+        const command: Command = new (await (await import(dir)).default)();
         if (command.disabled) continue;
 
         this.commands.set(command.name, command);
@@ -137,9 +147,8 @@ export class Handler {
       }
 
       for (const file of commandFiles) {
-        const command: SlashCommand = new (await (
-          await import(file)
-        ).default)();
+        const dir = path.resolve(process.cwd(), file);
+        const command: SlashCommand = new (await (await import(dir)).default)();
         if (command.disabled) continue;
 
         this.slashCommands.set(command.name, command);
@@ -166,7 +175,8 @@ export class Handler {
       }
 
       for (const file of eventFiles) {
-        const event: Event = new (await (await import(file)).default)();
+        const dir = path.resolve(process.cwd(), file);
+        const event: Event = new (await (await import(dir)).default)();
         this.events.set(event.name, event);
 
         (this.client[event.emitter] || this.client).on(event.name, (...args) =>
