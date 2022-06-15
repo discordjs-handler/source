@@ -147,9 +147,8 @@ export class Handler {
       }
 
       for (const file of commandFiles) {
-        const command: SlashCommand = new (await (
-          await import(file)
-        ).default)();
+        const dir = path.resolve(process.cwd(), file);
+        const command: SlashCommand = new (await (await import(dir)).default)();
         if (command.disabled) continue;
 
         this.slashCommands.set(command.name, command);
@@ -176,7 +175,8 @@ export class Handler {
       }
 
       for (const file of eventFiles) {
-        const event: Event = new (await (await import(file)).default)();
+        const dir = path.resolve(process.cwd(), file);
+        const event: Event = new (await (await import(dir)).default)();
         this.events.set(event.name, event);
 
         (this.client[event.emitter] || this.client).on(event.name, (...args) =>
